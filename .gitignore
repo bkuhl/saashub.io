@@ -3,4 +3,5 @@
 Homestead.yaml
 .env
 .idea/*
+public/system
 _ide_helper.php

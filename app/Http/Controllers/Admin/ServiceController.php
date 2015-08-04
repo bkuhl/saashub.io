@@ -36,10 +36,12 @@ class ServiceController extends Controller
 
         DB::beginTransaction();
         $category = Category::findOrFail($request->get('categoryId'));
-        $postData = $request->only(['name', 'landing_url']);
-        $postData['category_id'] = $category->id;
-        $service = Service::create($postData);
-        $service->setLogo($request->file('logo'));
+        $service = Service::create(array_merge(
+            $request->only(['name', 'landing_url']),
+            [
+                'category_id'   => $category->id,
+                'logo'          => $request->file('logo')
+            ]));
 
         $category->update([
             'service_count' => $category->service_count+1
@@ -65,7 +67,7 @@ class ServiceController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         return view('admin.service.edit')
             ->withService(Service::findOrFail($id));
@@ -77,10 +79,15 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name'          => 'required',
+            'landing_url'   => 'required'
         ]);
 
-        Service::findOrFail($id)->update($request->only(['name']));
+        $postData = $request->only(['name', 'landing_url']);
+        if ($request->hasFile('logo')) {
+            $postData['logo'] = $request->file('logo');
+        }
+        Service::findOrFail($id)->update($postData);
 
         return redirect('/admin/dashboard');
     }

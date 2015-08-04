@@ -10,10 +10,6 @@
             <div class="mdl-cell mdl-cell--2-col"></div>
             <div class="mdl-cell mdl-cell--4-col">
                 @include('admin.service.form')
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="file" name="logo" value=""/>
-                    <label class="mdl-textfield__label">Logo</label>
-                </div>
             </div>
             <div class="mdl-cell mdl-cell--4-col">
                 <h5>Meta Data</h5>

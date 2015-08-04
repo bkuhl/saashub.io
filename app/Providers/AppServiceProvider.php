@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(\Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class);
+
         if (env('APP_DEBUG')) {
             $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
         }

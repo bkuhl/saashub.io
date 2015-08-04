@@ -38,8 +38,11 @@ class CreateInitialTables extends Migration
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('name');
-            $table->string('logo');
             $table->string('landing_url');
+            $table->string('logo_file_name')->nullable();
+            $table->integer('logo_file_size')->nullable();
+            $table->string('logo_content_type')->nullable();
+            $table->timestamp('logo_updated_at')->nullable();
             $table->timestamps();
         });
         Schema::create('service_metas', function (Blueprint $table) {
