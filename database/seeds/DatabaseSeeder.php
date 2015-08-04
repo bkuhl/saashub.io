@@ -10,6 +10,8 @@ use FreeTier\Category;
 
 class DatabaseSeeder extends Seeder {
 
+	protected $logoSeedPath;
+
 	/**
 	 * Run the database seeds.
 	 *
@@ -17,6 +19,11 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
+		$this->logoSeedPath = realpath(__DIR__.DIRECTORY_SEPARATOR.'logos');
+
+		// cleanup previously uploaded logos
+		exec('rm -rf '.realpath(__DIR__.'/../../public/logos'));
+
 		Model::unguard();
 
 		User::create([
@@ -43,6 +50,7 @@ class DatabaseSeeder extends Seeder {
 		$logentries = Service::create([
 			'category_id'	=> $logging->id,
 			'name' 			=> 'LogEntries',
+			'logo'			=> $this->getLogoPath('logentries'),
 			'landing_url'	=> 'http://www.logentries-landing.com'
 		]);
 		ServiceMeta::create([
@@ -69,6 +77,7 @@ class DatabaseSeeder extends Seeder {
 		$slack = Service::create([
 			'category_id'	=> $chat->id,
 			'name' 			=> 'Slack',
+			'logo'			=> $this->getLogoPath('slack'),
 			'landing_url'	=> 'http://www.slack-landing.com'
 		]);
 		ServiceMeta::create([
@@ -83,6 +92,7 @@ class DatabaseSeeder extends Seeder {
 		$hipChat = Service::create([
 			'category_id'	=> $chat->id,
 			'name' 			=> 'HipChat',
+			'logo'			=> $this->getLogoPath('hipchat'),
 			'landing_url'	=> 'http://www.hipchat-landing.com'
 		]);
 		ServiceMeta::create([
@@ -109,6 +119,7 @@ class DatabaseSeeder extends Seeder {
 		$dropbox = Service::create([
 			'category_id'	=> $cloudStorage->id,
 			'name' 			=> 'Dropbox',
+			'logo'			=> $this->getLogoPath('dropbox'),
 			'landing_url'	=> 'http://www.dropbox-landing.com'
 		]);
 		ServiceMeta::create([
@@ -123,6 +134,7 @@ class DatabaseSeeder extends Seeder {
 		$gDrive = Service::create([
 			'category_id'	=> $cloudStorage->id,
 			'name' 			=> 'Google Drive',
+			'logo'			=> $this->getLogoPath('drive'),
 			'landing_url'	=> 'http://drive.google-landing.com'
 		]);
 		ServiceMeta::create([
@@ -133,6 +145,14 @@ class DatabaseSeeder extends Seeder {
 		$cloudStorage->update([
 			'service_count' => $cloudStorage->service_count + 1
 		]);
+	}
+
+	private function getLogoPath($logo)
+	{
+		$original = $this->logoSeedPath.DIRECTORY_SEPARATOR.$logo.'.png';
+		$tmp = $this->logoSeedPath.DIRECTORY_SEPARATOR.$logo.'_'.time().'.png';
+		copy($original, $tmp);
+		return $tmp;
 	}
 
 }

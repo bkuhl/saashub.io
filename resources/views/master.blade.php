@@ -47,6 +47,10 @@
             font-size: 30px;
             font-weight: 700;
         }
+        .service-card img {
+            height: 100px;
+            width: 100px;
+        }
     </style>
 </head>
 <body>
@@ -67,8 +71,16 @@
 
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="/browse">Browse</a></li>
-                        <li><a href="/contact">Recommend a service</a></li>
+                        <li
+                                @if(strstr(Route::current()->getUri(), 'browse'))
+                                class="active"
+                                @endif
+                                ><a href="/browse">Browse</a></li>
+                        <li
+                            @if(Route::current()->getUri() == 'contact')
+                                class="active"
+                            @endif
+                        ><a href="/contact">Recommend a service</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,7 +114,6 @@
     <script src="/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
-    <script src="/js/retina.js"></script>
     @yield('includeJs')
     <script type="text/javascript">
         @yield('js')

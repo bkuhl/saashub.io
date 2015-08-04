@@ -11,7 +11,9 @@ class Service extends Model implements StaplerableInterface
     protected $guarded = ['id'];
 
     public function __construct(array $attributes = array()) {
-        $this->hasAttachedFile('logo');
+        $this->hasAttachedFile('logo', [
+            'url' => '/services/:id/logo/:style/:filename'
+        ]);
 
         parent::__construct($attributes);
     }
@@ -27,7 +29,7 @@ class Service extends Model implements StaplerableInterface
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function services()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }

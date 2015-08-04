@@ -17,8 +17,13 @@
     </div>
     <div class="container wrapper">
         <div class="inner_content">
-            <h2>Most Popular</h2>
-            @include('partials.most-popular')
+            <div class="row">
+                @foreach($popularServices as $service)
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        @include('partials.service-card')
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection
