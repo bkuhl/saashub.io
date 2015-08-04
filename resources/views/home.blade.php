@@ -17,7 +17,7 @@
     </div>
     <div class="container wrapper">
         <div class="inner_content">
-            <div class="row">
+            <div class="row pad30">
                 @foreach($popularServices as $service)
                     <div class="col-md-3 col-sm-4 col-xs-6">
                         @include('partials.service-card')

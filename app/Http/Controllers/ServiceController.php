@@ -1,6 +1,7 @@
 <?php namespace FreeTier\Http\Controllers;
 
 use FreeTier\Service;
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
@@ -11,9 +12,10 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function redirect($id)
+    public function redirect(Request $request, $id)
     {
         $service = Service::findOrFail($id);
+        $service->recordVisit($request->getClientIp());
 
         return redirect($service->landing_url);
     }

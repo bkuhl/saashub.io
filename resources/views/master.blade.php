@@ -51,6 +51,21 @@
             height: 100px;
             width: 100px;
         }
+        .categories ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .categories li a {
+            display: block;
+            padding: 4px 8px;
+        }
+        .categories li a:hover {
+            background-color: #7C899A;
+            color: #fff;
+        }
+        .categories li.active {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>

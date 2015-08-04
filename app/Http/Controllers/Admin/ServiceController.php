@@ -31,7 +31,7 @@ class ServiceController extends Controller
         $this->validate($request, [
             'name'          => 'required',
             'landing_url'   => 'required',
-            'logo'          => 'required'
+            'logo'          => 'required|mimes:png'
         ]);
 
         DB::beginTransaction();

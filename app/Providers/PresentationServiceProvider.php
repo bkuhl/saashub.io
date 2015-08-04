@@ -28,10 +28,10 @@ class PresentationServiceProvider extends ServiceProvider
             $view->with('categories', \FreeTier\Category::orderBy('name', 'DESC')->get());
         });
         \View::creator('home', function ($view) {
-            $view->with('popularServices', \FreeTier\Service::with('metas')->limit(4)->get());
+            $view->with('popularServices', \FreeTier\Service::with('metas')->popular()->limit(4)->get());
         });
         \View::creator('browse', function ($view) {
-            $view->with('popularServices', \FreeTier\Service::with('metas')->limit(6)->get());
+            $view->with('popularServices', \FreeTier\Service::with('metas')->popular()->limit(6)->get());
         });
     }
 }
