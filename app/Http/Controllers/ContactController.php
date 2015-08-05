@@ -1,5 +1,6 @@
 <?php namespace FreeTier\Http\Controllers;
 
+use Config;
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class ContactController extends Controller
         $mailer->send('emails.contact', ['body' => $request->get('message')], function($message) use($request)
         {
             $message->from($request->get('email'), $request->get('name'));
-            $message->to('benkuhl@gmail.com', 'Free Tier')->subject('FreeTier Inquiry');
+            $message->to(Config::get('saashub.contact'), 'Free Tier')->subject('FreeTier Inquiry');
         });
 
         Session::flash('success', "Thanks!  We'll be in touch shortly");
