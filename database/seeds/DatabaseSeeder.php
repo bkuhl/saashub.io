@@ -1,12 +1,12 @@
 <?php
 
-use FreeTier\CategoryLabel;
+use SaaSHub\CategoryLabel;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use FreeTier\User;
-use FreeTier\Service;
-use FreeTier\ServiceMeta;
-use FreeTier\Category;
+use SaaSHub\User;
+use SaaSHub\Service;
+use SaaSHub\ServiceMeta;
+use SaaSHub\Category;
 
 class DatabaseSeeder extends Seeder {
 

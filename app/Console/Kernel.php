@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Console;
+namespace SaaSHub\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \FreeTier\Console\Commands\Inspire::class,
+        \SaaSHub\Console\Commands\Inspire::class,
     ];
 
     /**

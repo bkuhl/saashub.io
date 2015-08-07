@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Http\Middleware;
+namespace SaaSHub\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

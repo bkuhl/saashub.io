@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    FreeTier\Http\Kernel::class
+    SaaSHub\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    FreeTier\Console\Kernel::class
+    SaaSHub\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    FreeTier\ExceptionHandler::class
+    SaaSHub\ExceptionHandler::class
 );
 
 /*

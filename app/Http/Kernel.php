@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Http;
+namespace SaaSHub\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \FreeTier\Http\Middleware\EncryptCookies::class,
+        \SaaSHub\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \FreeTier\Http\Middleware\VerifyCsrfToken::class,
+        \SaaSHub\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \FreeTier\Http\Middleware\Authenticate::class,
+        'auth' => \SaaSHub\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \FreeTier\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \SaaSHub\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

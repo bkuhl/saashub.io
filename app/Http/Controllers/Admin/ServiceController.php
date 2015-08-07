@@ -1,10 +1,10 @@
-<?php namespace FreeTier\Http\Controllers\Admin;
+<?php namespace SaaSHub\Http\Controllers\Admin;
 
 use DB;
-use FreeTier\Category;
-use FreeTier\Http\Controllers\Controller;
-use FreeTier\Service;
-use FreeTier\ServiceMeta;
+use SaaSHub\Category;
+use SaaSHub\Http\Controllers\Controller;
+use SaaSHub\Service;
+use SaaSHub\ServiceMeta;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 

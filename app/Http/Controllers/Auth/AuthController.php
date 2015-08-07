@@ -1,12 +1,12 @@
 <?php
 
-namespace FreeTier\Http\Controllers\Auth;
+namespace SaaSHub\Http\Controllers\Auth;
 
-use FreeTier\User;
+use SaaSHub\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Validator;
-use FreeTier\Http\Controllers\Controller;
+use SaaSHub\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 
 class AuthController extends Controller

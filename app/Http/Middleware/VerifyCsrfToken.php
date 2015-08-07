@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Http\Middleware;
+namespace SaaSHub\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 

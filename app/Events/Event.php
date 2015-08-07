@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Events;
+namespace SaaSHub\Events;
 
 abstract class Event
 {

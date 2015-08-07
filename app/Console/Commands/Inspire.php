@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Console\Commands;
+namespace SaaSHub\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

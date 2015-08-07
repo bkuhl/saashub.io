@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => FreeTier\User::class,
+        'model'  => SaaSHub\User::class,
         'key'    => '',
         'secret' => '',
     ],

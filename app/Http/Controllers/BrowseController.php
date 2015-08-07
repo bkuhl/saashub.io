@@ -1,4 +1,4 @@
-<?php namespace FreeTier\Http\Controllers;
+<?php namespace SaaSHub\Http\Controllers;
 
 class BrowseController extends Controller
 {

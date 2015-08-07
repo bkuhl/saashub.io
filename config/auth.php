@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => FreeTier\User::class,
+    'model' => SaaSHub\User::class,
 
     /*
     |--------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Providers;
+namespace SaaSHub\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'FreeTier\Events\SomeEvent' => [
-            'FreeTier\Listeners\EventListener',
+        'SaaSHub\Events\SomeEvent' => [
+            'SaaSHub\Listeners\EventListener',
         ],
     ];
 

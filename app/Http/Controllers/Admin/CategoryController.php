@@ -1,9 +1,9 @@
-<?php namespace FreeTier\Http\Controllers\Admin;
+<?php namespace SaaSHub\Http\Controllers\Admin;
 
 use DB;
-use FreeTier\Category;
-use FreeTier\CategoryLabel;
-use FreeTier\Http\Controllers\Controller;
+use SaaSHub\Category;
+use SaaSHub\CategoryLabel;
+use SaaSHub\Http\Controllers\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Http\Requests;
+namespace SaaSHub\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

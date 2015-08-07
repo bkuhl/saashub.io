@@ -22,7 +22,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <a href="/admin/dashboard"><span class="mdl-layout-title">FreeTier</span></a>
+            <a href="/admin/dashboard"><span class="mdl-layout-title">SaaSHub</span></a>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->

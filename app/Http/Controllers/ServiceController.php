@@ -1,6 +1,6 @@
-<?php namespace FreeTier\Http\Controllers;
+<?php namespace SaaSHub\Http\Controllers;
 
-use FreeTier\Service;
+use SaaSHub\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller

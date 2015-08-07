@@ -111,7 +111,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright">
-                        FreeTier
+                        SaaSHub
                         &copy;
                         {{ \Carbon\Carbon::now()->format('Y') }}
                     </div>

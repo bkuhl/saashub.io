@@ -1,6 +1,6 @@
-<?php namespace FreeTier\Http\Controllers\Admin;
+<?php namespace SaaSHub\Http\Controllers\Admin;
 
-use FreeTier\Http\Controllers\Controller;
+use SaaSHub\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {

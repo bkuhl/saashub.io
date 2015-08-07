@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        FreeTier\Providers\AppServiceProvider::class,
-        FreeTier\Providers\EventServiceProvider::class,
-        FreeTier\Providers\RouteServiceProvider::class,
-        FreeTier\Providers\PresentationServiceProvider::class,
+        SaaSHub\Providers\AppServiceProvider::class,
+        SaaSHub\Providers\EventServiceProvider::class,
+        SaaSHub\Providers\RouteServiceProvider::class,
+        SaaSHub\Providers\PresentationServiceProvider::class,
 
     ],
 

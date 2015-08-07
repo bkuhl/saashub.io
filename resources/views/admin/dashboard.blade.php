@@ -11,7 +11,7 @@
         </div>
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%">
             <tbody>
-            @foreach(\FreeTier\Category::all() as $category)
+            @foreach(\SaaSHub\Category::all() as $category)
                 <tr>
                     <td class="mdl-data-table__cell--non-numeric">
                         <a href="/admin/category/{{ $category->id }}/edit"><strong>{{ $category->name }}</strong></a>

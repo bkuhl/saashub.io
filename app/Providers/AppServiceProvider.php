@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier\Providers;
+namespace SaaSHub\Providers;
 
 use App;
 use Illuminate\Support\ServiceProvider;

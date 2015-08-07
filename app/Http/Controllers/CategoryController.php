@@ -1,6 +1,6 @@
-<?php namespace FreeTier\Http\Controllers;
+<?php namespace SaaSHub\Http\Controllers;
 
-use FreeTier\Category;
+use SaaSHub\Category;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CategoryController extends Controller
