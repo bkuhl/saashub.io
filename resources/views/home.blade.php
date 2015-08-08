@@ -1,6 +1,11 @@
 @extends('master')
 
-@section('title', 'Free Tier')
+@section('title', 'SaaS Hub')
+
+@section('meta')
+    <meta name="keywords" content="saas apps, saas, free"/>
+    <meta name="description" content="Helping connect you with free SaaS apps"/>
+@endsection
 
 @section('content')
     <div id="banner">
@@ -9,7 +14,7 @@
 
                 <!--welcome-->
                 <div class="welcome_index animated fadeInDown">
-                    Whether it's for a side project or just an experiment, services are always better when they're <span>free</span>
+                    Whether it's for a side project or just an experiment, SaaS apps are always better when they're <span>free</span>
                 </div>
                 <!--//welcome-->
             </div>

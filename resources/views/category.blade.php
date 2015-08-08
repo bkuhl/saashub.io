@@ -2,6 +2,10 @@
 
 @section('title', $category->name.' Services')
 
+@section('meta')
+    <meta name="description" content="{{ $category->name }} SaaS products"/>
+@endsection
+
 @section('content')
     <div class="container wrapper">
         <div class="inner_content">
