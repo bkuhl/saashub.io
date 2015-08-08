@@ -10,7 +10,7 @@
         "barryvdh/laravel-ide-helper": "^2.0",
         "codesleeve/laravel-stapler": "^1.0",
         "guzzlehttp/guzzle": "~5.3|~6.0",
-        "aws/aws-sdk-php": "^3.2"
+        "aws/aws-sdk-php": "2.4.*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
