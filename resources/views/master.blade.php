@@ -66,6 +66,9 @@
         .categories li.active {
             font-weight: bold;
         }
+        .service-card > .description {
+            height: 105px;
+        }
     </style>
 </head>
 <body>
