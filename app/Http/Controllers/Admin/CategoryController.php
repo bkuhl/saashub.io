@@ -29,7 +29,10 @@ class CategoryController extends Controller
         ]);
 
         DB::beginTransaction();
-        $category = Category::create($request->only(['name']));
+        $category = Category::create([
+            'name'  => $request->get('name'),
+            'slug'  => str_slug($request->get('name'))
+        ]);
         foreach ($request->get('label') as $label) {
             if (!empty($label)) {
                 CategoryLabel::create([
