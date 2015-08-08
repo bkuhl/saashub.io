@@ -25,7 +25,7 @@ class PresentationServiceProvider extends ServiceProvider
     public function register()
     {
         \View::creator('partials.categories', function ($view) {
-            $view->with('categories', \SaaSHub\Category::orderBy('name', 'DESC')->get());
+            $view->with('categories', \SaaSHub\Category::orderBy('name', 'ASC')->get());
         });
         \View::creator('home', function ($view) {
             $view->with('popularServices', \SaaSHub\Service::with('metas')->popular()->limit(4)->get());
