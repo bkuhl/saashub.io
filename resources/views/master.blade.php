@@ -13,8 +13,8 @@
         <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="/css/lato.css">
     @else
-        <link rel="shortcut icon" href="//assets.saashub.io/favicon.ico" type="image/x-icon"/>
-        <link rel="icon" href="//assets.saashub.io/favicon.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="http://assets.saashub.io/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="http://assets.saashub.io/favicon.ico" type="image/x-icon"/>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     @endif
 
