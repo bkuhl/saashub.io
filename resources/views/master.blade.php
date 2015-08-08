@@ -80,7 +80,13 @@
                     </button>
                     <!--logo-->
                     <div class="logo">
-                        <a href="/"><img src="/img/logo.png" /></a>
+                        <a href="/">
+                            @if(App::environment('production'))
+                                <img src="http://assets.saashub.io/logo.png" />
+                            @else
+                                <img src="/img/logo.png" />
+                            @endif
+                        </a>
                     </div>
                 </div>
 
