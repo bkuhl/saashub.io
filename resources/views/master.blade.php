@@ -9,8 +9,12 @@
     @yield('meta')
 
     @if(App::environment('local'))
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="/css/lato.css">
     @else
+        <link rel="shortcut icon" href="//assets.saashub.io/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="//assets.saashub.io/favicon.ico" type="image/x-icon"/>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     @endif
 
@@ -39,9 +43,6 @@
             margin-top: 0;
             text-align: center;
         }
-        .categories li.active {
-
-        }
         h1.category-title {
             margin-top: 6px;
             font-size: 30px;
@@ -57,7 +58,7 @@
         }
         .categories li a {
             display: block;
-            padding: 4px 8px;
+            padding: 2px 8px;
         }
         .categories li a:hover {
             background-color: #7C899A;
