@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
+        'domain' => 'saashub.io',
         'secret' => '',
     ],
 
@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => SaaSHub\User::class,
+        'model'  => \SaaSHub\User::class,
         'key'    => '',
         'secret' => '',
     ],

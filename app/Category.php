@@ -1,4 +1,4 @@
-<?php namespace FreeTier;
+<?php namespace SaaSHub;
 
 use Illuminate\Database\Eloquent\Model;
 

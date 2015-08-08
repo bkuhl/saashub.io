@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeTier;
+namespace SaaSHub;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

@@ -32,7 +32,7 @@ class ContactController extends Controller
         $mailer->send('emails.contact', ['body' => $request->get('message')], function($message) use($request)
         {
             $message->from($request->get('email'), $request->get('name'));
-            $message->to(Config::get('saashub.contact'), 'Free Tier')->subject('FreeTier Inquiry');
+            $message->to(Config::get('saashub.contact'), 'SaaSHub')->subject('SaaSHub Inquiry');
         });
 
         Session::flash('success', "Thanks!  We'll be in touch shortly");
