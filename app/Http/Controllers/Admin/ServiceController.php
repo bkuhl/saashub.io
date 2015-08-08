@@ -50,7 +50,7 @@ class ServiceController extends Controller
         $labels = $request->get('label');
         if (count($labels) > 0) {
             foreach ($labels as $labelId => $value) {
-                if (!empty($label)) {
+                if (!empty($value)) {
                     ServiceMeta::create([
                         'service_id'   => $service->id,
                         'label_id'     => $labelId,
