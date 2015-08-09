@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="container wrapper">
+    <div class="container">
         <div class="inner_content">
             <div class="row pad30">
                 @foreach($popularServices as $service)
@@ -30,5 +30,9 @@
                 @endforeach
             </div>
         </div>
+    </div>
+    <div id="footer">
+        <h1>We're picky about the services we list</h1>
+        <h3 class="center follow">They must be web-based and be offer a forever free tier of service</h3>
     </div>
 @endsection
