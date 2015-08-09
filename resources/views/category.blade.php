@@ -40,7 +40,7 @@
                                 <td class="text-center">{{ $meta->value }}</td>
                                 @endforeach
                                 <td class="row text-center rating-section" data-serviceId="{{ $service->id }}">
-                                    <table>
+                                    <table style="margin: 0 auto">
                                         <tr>
                                             <td rowspan="2" class="visible-ratings">
                                                 <span class="text-success positive-ratings">{{ number_format($service->positive_ratings) }}</span> &nbsp;
