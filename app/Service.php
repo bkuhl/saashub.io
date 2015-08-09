@@ -43,7 +43,15 @@ class Service extends Model implements StaplerableInterface
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function activity()
+    public function activities()
+    {
+        return $this->hasMany(ServiceVisits::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ratings()
     {
         return $this->hasMany(ServiceVisits::class);
     }
@@ -78,9 +86,62 @@ class Service extends Model implements StaplerableInterface
 
     public function scopePopular(Builder $query)
     {
-        return $query->select(DB::raw('*, (
-                SELECT COUNT(id) FROM service_visits WHERE service_visits.service_id = services.id AND created_at > DATE_ADD(NOW(), INTERVAL -1 MONTH)
-            ) as hits'))
-            ->orderBy('hits', 'DESC');
+        return $query->orderBy('positive_ratings', 'DESC');
+    }
+
+    /**
+     * Determine if the given IP has rated this service
+     *
+     * @param $ipAddress
+     *
+     * @return bool
+     */
+    public function hasRated($ipAddress)
+    {
+        return ServiceRatings::where('service_id', $this->id)
+            ->where('ip', $ipAddress)
+            ->count() > 0;
+    }
+
+    public function ratePositive($ipAddress)
+    {
+        $this->increment('positive_ratings');
+
+        if ($this->hasRated($ipAddress)) {
+            $this->decrement('negative_ratings');
+            ServiceRatings::where('ip', $ipAddress)
+                ->where('service_id', $this->id)
+                ->update([
+                    'rating' => ServiceRatings::POSITIVE
+                ]);
+            return;
+        }
+
+        ServiceRatings::create([
+            'service_id'    => $this->id,
+            'ip'            => $ipAddress,
+            'rating'        => ServiceRatings::POSITIVE
+        ]);
+    }
+
+    public function rateNegative($ipAddress)
+    {
+        $this->increment('negative_ratings');
+
+        if ($this->hasRated($ipAddress)) {
+            $this->decrement('positive_ratings');
+            ServiceRatings::where('ip', $ipAddress)
+                ->where('service_id', $this->id)
+                ->update([
+                    'rating' => ServiceRatings::NEGATIVE
+                ]);
+            return;
+        }
+
+        ServiceRatings::create([
+            'service_id'    => $this->id,
+            'ip'            => $ipAddress,
+            'rating'        => ServiceRatings::NEGATIVE
+        ]);
     }
 }

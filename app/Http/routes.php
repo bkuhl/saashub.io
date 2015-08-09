@@ -21,6 +21,11 @@ Route::get('/service/{id}/go', 'ServiceController@redirect');
 Route::get('/contact', 'ContactController@getContact');
 Route::post('/contact', 'ContactController@postContact');
 
+# ajax reqests
+Route::post('service/{serviceId}/positive', 'ServiceController@positive');
+Route::post('service/{serviceId}/negative', 'ServiceController@negative');
+
+# auth
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');

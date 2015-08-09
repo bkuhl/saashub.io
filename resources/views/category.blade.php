@@ -25,6 +25,7 @@
                                 @foreach($category->labels as $label)
                                     <th class="text-center">{{ $label->name }}</th>
                                 @endforeach
+                                <th class="text-center">Rating</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,6 +39,27 @@
                                 @foreach($service->metas as $meta)
                                 <td class="text-center">{{ $meta->value }}</td>
                                 @endforeach
+                                <td class="row text-center rating-section" data-serviceId="{{ $service->id }}">
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2" class="visible-ratings">
+                                                <span class="text-success positive-ratings">{{ number_format($service->positive_ratings) }}</span> &nbsp;
+                                                <span class="text-danger negative-ratings">{{ number_format($service->negative_ratings) }}</span>
+                                            </td>
+                                            <td
+                                                @if(array_key_exists($service->id, $ratings))
+                                                    @if ($ratings[$service->id] == \SaaSHub\ServiceRatings::POSITIVE)
+                                                        class="rated-positive"
+                                                    @else
+                                                        class="rated-negative"
+                                                    @endif
+                                                @endif>
+                                                <span class="rate-up"></span>
+                                                <span class="rate-down"></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
