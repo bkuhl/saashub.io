@@ -92,6 +92,9 @@
         .rated-negative .rate-down {
             background-position-x: -34px;
         }
+        .positive-ratings, .negative-ratings {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
