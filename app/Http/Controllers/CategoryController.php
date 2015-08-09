@@ -31,6 +31,6 @@ class CategoryController extends Controller
         return view('category')
             ->withRatings($ratingsCache)
             ->withCategory($category)
-            ->withServices($category->services()->with('metas')->get());
+            ->withServices($category->services()->with('metas')->orderBy('positive_ratings', 'DESC')->get());
     }
 }
